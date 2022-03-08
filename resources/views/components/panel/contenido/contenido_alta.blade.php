@@ -3,23 +3,31 @@
 @section('section_admin')
 
 
-    <button type="button" class="btn btn-dark">Dark</button>
+    <div class="card-body">
+        <form class="form-group" action="{{route('altaContenido')}}" method="POST" enctype="multipart/form-data">
+            @csrf
 
-    <!-- Card with an image on left -->
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/img/Panel.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Bienvenido al panel de administracion</h5>
-              <p class="card-text">En este panel podra realizar los cambios necesarios para el contenido del sitio oficial de la Direccion Provincial de Planificacion.</p>
-              <p class="card-text">Por cualquier consulta puede comunicarse con Jorge Ruben Albornos Saint Claire. jorgea306@gmail.com o por celular 3834400061.</p>
+            @error('ruta')
+            <div class="alert alert-danger" role="alert">
+                la foto es obligatoria o el tamaño supera lo permitido
             </div>
-          </div>
-        </div>
-      </div><!-- End Card with an image on left -->
+            @enderror
+
+            <div class="custom-file">
+                <label class="custom-file-label" for="descripcion">seleccione una imagen...</label>
+                <input type="file" class="custom-file-input" name="ruta">
+            </div>
+
+
+            <label for="nombre">Titulo</label>
+            <input type="text" name="titulo" placeholder="ingrese el titulo.." class="form-control mb-2">
+
+            <label for="descripcion">Contenido</label>
+            <input type="text" name="contenido" placeholder="ingrese el contenido.." class="form-control mb-2">
+
+            <button type="submit" class="btn btn-success mt-2">agregar foto</button>
+        </form>
+    </div>
 
 
 @endsection

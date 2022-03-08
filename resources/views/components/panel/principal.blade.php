@@ -2,7 +2,15 @@
 
 @section('section_admin')
 
-
+<div class="pagetitle">
+    <h1>Principal</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{route('panel')}}">Home</a></li>
+        <li class="breadcrumb-item active">Principal</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
 
 
     <!-- Card with an image on left -->

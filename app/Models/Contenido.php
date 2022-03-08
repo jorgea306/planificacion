@@ -9,9 +9,9 @@ class Contenido extends Model
 {
     use HasFactory;
 
-    public function foto()
-    {
-        return $this->belongsTo('App\Models\Foto', 'id', 'id');
-    }
+    // public function foto()
+    // {
+    //     return $this->belongsTo('App\Models\Foto', 'id', 'id');
+    // }
 
 }

@@ -43,7 +43,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{route('panel')}}" class="logo d-flex align-items-center">
         <img src="assets/img/10.png" alt="">
         <span class="d-none d-lg-block">Panel de Administración</span>
       </a>
@@ -62,7 +62,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="{{route('panel')}}">
           <i class="bi bi-grid"></i>
           <span>PRINCIPAL</span>
         </a>
@@ -71,22 +71,22 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
-          <i class="bi bi-person"></i>
+        <a class="nav-link collapsed" href="{{route('contenido')}}">
+          <i class="bi bi-newspaper"></i>
           <span>Contenido</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="pages-faq.html">
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-camera"></i>
           <span>Foto Contenido</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('desarrollo_panel')}}">
-          <i class="bi bi-envelope"></i>
+          <i class="bi bi-file-earmark-image"></i>
           <span>Desarrollo Territorial</span>
         </a>
       </li><!-- End Contact Page Nav -->
@@ -97,15 +97,6 @@
 
   <main id="main" class="main">
 
-    <div class="pagetitle">
-      <h1>Principal</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Principal</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
 
     <section class="section dashboard">
       <div class="row">

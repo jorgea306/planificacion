@@ -3,23 +3,42 @@
 @section('section_admin')
 
 
-    <button type="button" class="btn btn-dark">Dark</button>
+    <a type="button" href="{{route('contenido_alta')}}" class="btn btn-dark">Crear</a>
 
-    <!-- Card with an image on left -->
-      <div class="card mb-3">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/img/Panel.jpg" class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Bienvenido al panel de administracion</h5>
-              <p class="card-text">En este panel podra realizar los cambios necesarios para el contenido del sitio oficial de la Direccion Provincial de Planificacion.</p>
-              <p class="card-text">Por cualquier consulta puede comunicarse con Jorge Ruben Albornos Saint Claire. jorgea306@gmail.com o por celular 3834400061.</p>
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Contenido</h5>
+
+          <div class="row">
+            @foreach ($contenidos as $item)
+
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4" style="">
+                <div class="bg-white shadow rounded overflow p-3 tarjeta">
+                    <img src="{{ asset('img/'.$item->ruta)}}" alt="ft_producto" class="img-fluid card-img-top">
+                    <p class="text-muted mb-2 mt-2">nombre: {{$item->titulo}}</p>
+                    <p class="text-muted mb-2 mt-2">nombre: {{$item->contenido}}</p>
+                    <p class="text-muted mb-2 mt-2">ruta: {{$item->ruta}}</p>
+                    {{-- <a href="{{route('editarFoto', $item)}}" title="editar" class="btn btn-sm btn-warning text-white mb-3">
+                        <i class="fa fa-pen"></i>
+                        Editar
+                    </a> --}}
+                    <form action="{{route('bajaContenido',$item)}}" class="d-inline" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button title="borarr" class="btn btn-danger btn-sm" type="submit">
+                            <i class="fa fa-trash"></i>
+                            Eliminar
+                        </button>
+                    </form>
+                </div>
             </div>
-          </div>
+
+            @endforeach
         </div>
-      </div><!-- End Card with an image on left -->
+
+
+        </div>
+      </div>
 
 
 @endsection

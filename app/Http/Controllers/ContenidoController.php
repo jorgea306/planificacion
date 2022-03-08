@@ -26,12 +26,17 @@ class ContenidoController extends Controller
         {
             //validacion
             $request->validate([
+                'ruta' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:50000',
                 'titulo' => 'required',
                 'contenido' => 'required'
             ]);
 
+            $imageName = time() . '.' . $request->ruta->extension();
+            $request->ruta->move(public_path('/img/'), $imageName);
+
             $nuevoContenido = new Contenido;
 
+            $nuevoContenido->ruta = $request->imageName;
             $nuevoContenido->titulo = $request->titulo;
             $nuevoContenido->contenido = $request->contenido;
 
@@ -42,32 +47,32 @@ class ContenidoController extends Controller
         }
 
         //acceder editar
-        public function editar($id)
-        {
-            $contenido = Contenido::findOrFail($id);
+        // public function editar($id)
+        // {
+        //     $contenido = Contenido::findOrFail($id);
 
-            return view('components.panel.contenido.contenido_editar', compact('contenido'));
-        }
+        //     return view('components.panel.contenido.contenido_editar', compact('contenido'));
+        // }
 
         //update
-        public function update(Request $request, $id)
-        {
-            $ContenidoUpdate = Contenido::findOrFail($id);
+        // public function update(Request $request, $id)
+        // {
+        //     $ContenidoUpdate = Contenido::findOrFail($id);
 
-            //validacion
-            $request->validate([
-                'titulo' => 'required',
-                'contenido' => 'required'
-            ]);
+        //     //validacion
+        //     $request->validate([
+        //         'titulo' => 'required',
+        //         'contenido' => 'required'
+        //     ]);
 
-            $ContenidoUpdate->titulo = $request->titulo;
-            $ContenidoUpdate->contenido = $request->contenido;
+        //     $ContenidoUpdate->titulo = $request->titulo;
+        //     $ContenidoUpdate->contenido = $request->contenido;
 
 
-            $ContenidoUpdate->save();
+        //     $ContenidoUpdate->save();
 
-            return redirect('contenido')->with('mensaje', 'Contenido editado con exito!');
-        }
+        //     return redirect('contenido')->with('mensaje', 'Contenido editado con exito!');
+        // }
 
         //baja
         public function baja($id)
@@ -81,11 +86,11 @@ class ContenidoController extends Controller
 
         /*PAGINA WEB*/
         //leer producto web
-        public function leerWeb()
-        {
+        // public function leerWeb()
+        // {
 
-            $contenidos = Contenido::paginate(5);
+        //     $contenidos = Contenido::paginate(5);
 
-            return view('components.pagina.producto', compact('productos'));
-        }
+        //     return view('components.pagina.producto', compact('productos'));
+        // }
 }

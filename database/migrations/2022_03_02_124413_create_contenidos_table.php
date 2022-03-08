@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('contenidos', function (Blueprint $table) {
             $table->id();
+            $table->String('ruta')->nullable($value = true);
             $table->text("titulo");
             $table->text("contenido");
             $table->timestamps();

@@ -11,7 +11,7 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active text" href="#datos">Actualizacion de Datos</a></li>
+          <li><a class="nav-link scrollto active text" href="#comenzar">Comenzar</a></li>
           <li><a class="nav-link scrollto text" target="_blank" href="https://portal.catamarca.gob.ar/ui/" >Registro de Usuario</a></li>
           <li><a class="nav-link scrollto text" target="_blank" href="https://portal.catamarca.gob.ar/ui/">Portal de Catamarca</a></li>
           <li><a class="nav-link scrollto text" href="#formulario">Contacto</a></li>
@@ -175,7 +175,7 @@
   </section><!-- End Tabs Section -->
 
       <!-- ======= About Section ======= -->
-      <section id="about" class="about section-bg">
+      <section id="comenzar" class="about section-bg">
         <div class="container" data-aos="fade-up">
 
           <div class="row no-gutters">
@@ -185,7 +185,7 @@
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
                 </p>
-                <a href="{{route('desarrollo_alta')}}" class="about-btn"><span>Comenzar</span> <i class="bx bx-chevron-right"></i></a>
+                <a  href="{{route('desarrollo_alta')}}" class="about-btn"><span>Comenzar</span> <i class="bx bx-chevron-right"></i></a>
               </div>
             </div>
             <div class="col-xl-7 d-flex align-items-stretch">
